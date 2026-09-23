@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import { AppProvider } from './context/AppContext.jsx';
 
@@ -62,6 +63,7 @@ export function App() {
   return (
     <AuthProvider>
       <AppProvider>
+        <Analytics />
         <Routes>
           {/* Public Auth Routes */}
           <Route path="/login" element={<Login />} />

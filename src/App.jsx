@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import { AppProvider } from './context/AppContext.jsx';
 
@@ -152,6 +153,7 @@ export function App() {
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <Analytics />
       </AppProvider>
     </AuthProvider>
   );
